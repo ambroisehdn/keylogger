@@ -66,7 +66,7 @@ def write_to_gsheets():
     except Exception as e:
         print(e)
 
-link= "https://script.google.com/macros/s/AKfycbx3AY9YCOWcC-XiWTdeaEdmq5MdaN19RFkLneWS1nUZQoyCfw/exec"      
+link = "https://script.google.com/macros/s/AKfycbx3AY9YCOWcC-XiWTdeaEdmq5MdaN19RFkLneWS1nUZQoyCfw/exec"      
 text = ""
 mouse_listener = mouse.Listener(on_click=on_click)
 mouse_listener.start()
